@@ -104,6 +104,9 @@ def modify_contact(id)
 end
 
 
+def del_contact(id)
+	@contacts.each {|contact| @contacts.delete(contact) if contact.id == id}
+end
 
 
 

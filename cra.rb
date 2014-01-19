@@ -56,6 +56,15 @@ def self.modify_existing_contact
   CRA.main_menu
 end
 
+def self.delete_contact
+  puts "Please input the ID number of the contact you wish to delete:"
+  id_num = gets.to_i
+
+  @rolo.del_contact(id_num)
+  CRA.main_menu
+end
+
+
 
 def self.call_option(user_selected)
   add_new_contact if user_selected == 1
