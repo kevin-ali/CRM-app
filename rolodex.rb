@@ -17,9 +17,9 @@ class Rolodex
 	end
 
 	def find_contact(id)
-		@contacts.each do |contact|
+		@contacts.each { |contact|
 			puts "#{contact.id}: #{contact.first_name} #{contact.last_name} | #{contact.email} | #{contact.note}" if contact.id == id
-		end
+		}
 	end
 
 	def display_contacts
@@ -35,6 +35,32 @@ class Rolodex
 					 }
 	end
 
+def display_an_attribute
+	puts ""
+	puts "Which attribute would you like to view?"
+	puts "[1] ID numbers"
+	puts "[2] First names"
+	puts "[3] Last names"
+	puts "[4] Email addresses"
+	puts "[5] Notes"
+	puts ""
+	choice_att = gets.to_i
 
+	if choice_att == 1
+		@contacts.each {|contact| puts "#{contact.id}"}
+	elsif choice_att == 2
+		@contacts.each {|contact| puts "#{contact.first_name}"}
+	elsif choice_att == 3
+		@contacts.each {|contact| puts "#{contact.last_name}"}
+	elsif choice_att == 4
+		@contacts.each {|contact| puts "#{contact.email}"}
+	elsif choice_att == 5
+		@contacts.each {|contact| puts "#{contact.note}"}
+	else
+		puts "Sorry, I did not quite catch that."
+		puts ""
+	end
+
+end
 
 end
