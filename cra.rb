@@ -47,6 +47,14 @@ def self.search_contact
   CRA.main_menu
 end
 
+def self.modify_existing_contact
+  puts ""
+  puts "Please input user ID of the contact you wish to modify:"
+  id_num = gets.to_i
+
+  @rolo.modify_contact(id_num)
+  CRA.main_menu
+end
 
 
 def self.call_option(user_selected)
